@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="RM8-ii-Yab">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu-->
+        <scene sceneID="JVr-6r-wuD">
+            <objects>
+                <viewController id="RM8-ii-Yab" customClass="RESideMenu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Cx-jk-kDa"/>
+                        <viewControllerLayoutGuide type="bottom" id="X2d-gX-ubo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xki-xZ-CBb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="leftMenuViewStoryboardID" value="UIMainMenuVC"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="contentViewStoryboardID" value="appNC"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BNJ-HO-yEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="141"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e3A-cZ-z9h">
+            <objects>
+                <navigationController storyboardIdentifier="appNC" id="exS-5w-SBp" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Dg-K2-kCB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="H9c-B9-4wv" kind="relationship" relationship="rootViewController" id="6Zv-hu-iED"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uay-GY-17k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="444" y="141"/>
+        </scene>
+        <!--WebVC-->
+        <scene sceneID="2oL-4F-ZnQ">
+            <objects>
+                <viewController storyboardIdentifier="UIWebVC" id="H9c-B9-4wv" customClass="UIWebVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gHC-kq-7qe"/>
+                        <viewControllerLayoutGuide type="bottom" id="06n-KU-5ui"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7aq-lD-dmK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Y-Py-5KY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="H9c-B9-4wv" id="IgU-3z-YBl"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="06n-KU-5ui" firstAttribute="top" secondItem="Z5Y-Py-5KY" secondAttribute="bottom" id="2fO-Un-pWG"/>
+                            <constraint firstItem="Z5Y-Py-5KY" firstAttribute="leading" secondItem="7aq-lD-dmK" secondAttribute="leading" id="LnP-SQ-aHq"/>
+                            <constraint firstItem="Z5Y-Py-5KY" firstAttribute="top" secondItem="7aq-lD-dmK" secondAttribute="top" id="Xkm-Jg-z6D"/>
+                            <constraint firstAttribute="trailing" secondItem="Z5Y-Py-5KY" secondAttribute="trailing" id="jEf-6s-adB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LRO-tl-MuG"/>
+                    <connections>
+                        <outlet property="web" destination="Z5Y-Py-5KY" id="4xP-Mp-y2y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fa8-GN-cwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1009" y="142"/>
+        </scene>
+        <!--Main MenuVC-->
+        <scene sceneID="jq2-ej-z96">
+            <objects>
+                <viewController storyboardIdentifier="UIMainMenuVC" id="oLJ-PS-x2b" customClass="UIMainMenuVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xxq-dP-pWb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nUm-j8-Dha"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eJr-CZ-U9t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ff-GO-e6m">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="200" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Osi-Iu-2zb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Mb2-tP-2Ip">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3do-Tn-Mqy">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3do-Tn-Mqy" id="F2s-gV-SEy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oLJ-PS-x2b" id="nFn-9Y-pDX"/>
+                                    <outlet property="delegate" destination="oLJ-PS-x2b" id="JR1-Zl-UlM"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2N-Rc-Yye">
+                                <rect key="frame" x="16" y="494" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LGB-gg-7aI"/>
+                                    <constraint firstAttribute="width" constant="44" id="f9w-fK-9pI"/>
+                                </constraints>
+                                <state key="normal" image="icon_menu_fb">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFBAction:" destination="oLJ-PS-x2b" eventType="touchUpInside" id="YOw-QT-LXn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbm-Bh-8Da">
+                                <rect key="frame" x="76" y="494" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OWm-fS-aTw"/>
+                                    <constraint firstAttribute="width" constant="44" id="Vyv-sW-XzS"/>
+                                </constraints>
+                                <state key="normal" image="icon_menu_vk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showVKAction:" destination="oLJ-PS-x2b" eventType="touchUpInside" id="qBI-Cb-yXO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Osi-Iu-2zb" firstAttribute="leading" secondItem="eJr-CZ-U9t" secondAttribute="leading" id="99F-61-LIG"/>
+                            <constraint firstAttribute="trailing" secondItem="Osi-Iu-2zb" secondAttribute="trailing" id="Jhz-Mn-J20"/>
+                            <constraint firstItem="nUm-j8-Dha" firstAttribute="top" secondItem="D2N-Rc-Yye" secondAttribute="bottom" constant="30" id="Kc5-ab-Rzt"/>
+                            <constraint firstItem="nUm-j8-Dha" firstAttribute="top" secondItem="Osi-Iu-2zb" secondAttribute="bottom" id="R5v-ZV-MeJ"/>
+                            <constraint firstItem="D2N-Rc-Yye" firstAttribute="leading" secondItem="eJr-CZ-U9t" secondAttribute="leading" constant="16" id="S7N-t7-SoB"/>
+                            <constraint firstItem="0ff-GO-e6m" firstAttribute="leading" secondItem="eJr-CZ-U9t" secondAttribute="leading" id="jqf-CX-ruF"/>
+                            <constraint firstItem="Osi-Iu-2zb" firstAttribute="top" secondItem="eJr-CZ-U9t" secondAttribute="top" id="kAS-RF-pv6"/>
+                            <constraint firstItem="qbm-Bh-8Da" firstAttribute="leading" secondItem="D2N-Rc-Yye" secondAttribute="trailing" constant="16" id="n8Z-re-7bU"/>
+                            <constraint firstAttribute="trailing" secondItem="0ff-GO-e6m" secondAttribute="trailing" id="rlW-lu-CUS"/>
+                            <constraint firstItem="nUm-j8-Dha" firstAttribute="top" secondItem="0ff-GO-e6m" secondAttribute="bottom" id="vHW-d5-Dxq"/>
+                            <constraint firstItem="0ff-GO-e6m" firstAttribute="top" secondItem="eJr-CZ-U9t" secondAttribute="top" id="yzH-TU-W2q"/>
+                            <constraint firstItem="nUm-j8-Dha" firstAttribute="top" secondItem="qbm-Bh-8Da" secondAttribute="bottom" constant="30" id="zkD-00-Q8K"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="blurBg" destination="0ff-GO-e6m" id="FtB-b4-SIl"/>
+                        <outlet property="table" destination="Osi-Iu-2zb" id="EaF-08-qBP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y4h-uT-Re9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="775"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_menu_fb" width="52" height="52"/>
+        <image name="icon_menu_vk" width="52" height="52"/>
+    </resources>
+</document>
